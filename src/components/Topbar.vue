@@ -16,7 +16,11 @@
 
 <script>
 export default {
-
+  name: 'Topbar',
+  props: [],
+  data () {
+    return {}
+  }
 }
 </script>
 
