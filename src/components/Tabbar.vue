@@ -1,24 +1,10 @@
 <template>
   <div class="container">
-    <div class="container-item">
-      <img src="../assets/weixin.png">
-      <span id="weixin">微信</span>
-      <div class="modify">1</div>
-    </div>
-    <div class="container-item">
-      <img src="../assets/tongxunlu.png">
-      <span id="tongxunlu">通讯录</span>
-      <div class="modify">1</div>
-    </div>
-    <div class="container-item">
-      <img src="../assets/find.png">
-      <span id="find">发现</span>
-      <div class="modify">1</div>
-    </div>
-    <div class="container-item">
-      <img src="../assets/me.png">
-      <span id="me">我</span>
-      <div class="modify">1</div>
+    <div class="container-item" v-for='(item,index) in list' :key='index' @click='changePage' :active='active'>
+      <img :src="item.activeImg" v-if="active === index ? true : false">
+      <img :src="item.normalImg" v-else>
+      <span :id="item.id">{{item.text}}</span>
+      <div class="modify">{{item.num}}</div>
     </div>
   </div>
 </template>
@@ -28,9 +14,45 @@ export default {
   name: 'Tabbar',
   props: [],
   data () {
-    return {}
-  }
+    return {
+      active: 0,
+      list: [
+        {
+          normalImg: require('../assets/weixin.png'),
+          activeImg: require('../assets/weixin_active.png'),
+          id: 'weixin',
+          text: '微信',
+          num: 1
+        },
+        {
+          normalImg: require('../assets/tongxunlu.png'),
+          activeImg: require('../assets/tongxunlu_active.png'),
+          id: 'tongxunlu',
+          text: '通讯录',
+          num: 1
+        },
+        {
+          normalImg: require('../assets/find.png'),
+          activeImg: require('../assets/find_active.png'),
+          id: 'find',
+          text: '发现',
+          num: 1
+        },
+        {
+          normalImg: require('../assets/me.png'),
+          activeImg: require('../assets/me_active.png'),
+          id: 'me',
+          text: '我',
+          num: 1
+        }
+      ]
+    }
+  },
+  methods: {
+    changePage () {
 
+    }
+  }
 }
 </script>
 
