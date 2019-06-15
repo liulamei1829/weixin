@@ -2,8 +2,11 @@
   <div class="container">
     <div style="display: table"></div>
     <div class="top">
-      <span class="title">微信</span>
-      <img src="../assets/add.png" class="pic-add">
+      <span class="title">
+        {{titleText}}
+        <span v-if="totalModify">({{totalModify}})</span>
+      </span>
+      <img :src="path" class="pic-add">
     </div>
     <div class="bottom">
       <div class="search">
@@ -17,7 +20,11 @@
 <script>
 export default {
   name: 'Topbar',
-  props: [],
+  props: {
+    titleText: String,
+    path: String,
+    totalModify: Number
+  },
   data () {
     return {}
   }
@@ -28,12 +35,14 @@ export default {
   .container{
     width: 340px;
     height: 85px;
-    background-color: #ddd;
+    background-color: #e6e6e6;
   }
   .top{
     position: fixed;
     width: 100%;
     height: 40px;
+    background-color: #e6e6e6;
+    z-index: 999;
   }
   .title{
     position: absolute;
