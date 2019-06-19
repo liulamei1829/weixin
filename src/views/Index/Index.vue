@@ -3,7 +3,7 @@
     <Topbar :titleText="titleText" :path="path" :totalModify="totalModify"/>
     <StateBar/>
     <MsgList :list="msgList"/>
-    <Tabbar :active="3"/>
+    <Tabbar :active="0"/>
   </div>
 </template>
 

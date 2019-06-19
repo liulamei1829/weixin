@@ -1,14 +1,17 @@
 <template>
   <div>
     <Topbar :titleText="titleText" :path="path"/>
+
+    <Tabbar :active="1"/>
   </div>
 </template>
 
 <script>
-import Topbar from '../components/Topbar.vue'
+import Topbar from '../../components/Topbar.vue'
+import Tabbar from '../../components/Tabbar.vue'
 export default {
   name: 'Address',
-  components: { Topbar },
+  components: { Topbar, Tabbar },
   data () {
     return {
       titleText: '通讯录',
