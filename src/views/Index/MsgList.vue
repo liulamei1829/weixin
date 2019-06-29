@@ -6,7 +6,7 @@
 </template>
 
 <script>
-import MsgItem from '../../components/MsgItem'
+import MsgItem from './MsgItem'
 export default {
   name: 'MsgList',
   components: { MsgItem },

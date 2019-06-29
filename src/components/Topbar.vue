@@ -8,7 +8,7 @@
       </span>
       <img :src="path" class="pic-add">
     </div>
-    <div class="bottom">
+    <div class="bottom" v-if="!isHideSearch">
       <div class="search">
         <img src="../assets/search.png" class="pic-search">
         <span class="span-search">搜索</span>
@@ -21,6 +21,7 @@
 export default {
   name: 'Topbar',
   props: {
+    isHideSearch: Boolean,
     titleText: String,
     path: String,
     totalModify: Number

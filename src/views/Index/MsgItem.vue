@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <div class="left">
-      <img :src="item.src || require('../assets/avatar.png')" class="avatar">
+      <img :src="item.src || require('../../assets/avatar.png')" class="avatar">
     </div>
     <div class="right">
       <div class="above">
