@@ -104,7 +104,8 @@ export default {
     return {
       titleText: '微信',
       path: require('../../assets/add.png'),
-      totalModify: 0
+      totalModify: 0,
+      msgList: []
     }
   }
 }

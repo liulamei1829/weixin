@@ -3,13 +3,17 @@
     <div class="top">
       <div class="title">发现</div>
     </div>
+    <FindItem />
+    <Tabbar :active="2"/>
   </div>
 </template>
 
 <script>
+import FindItem from './FindItem'
+import Tabbar from '../../components/Tabbar'
 export default {
   name: 'Find',
-  components: {},
+  components: { FindItem, Tabbar },
   data () {
     return {}
   }

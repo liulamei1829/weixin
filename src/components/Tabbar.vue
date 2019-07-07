@@ -1,9 +1,9 @@
 <template>
   <div class="container">
     <div class="container-item" v-for='(item,index) in list' :key='index' @click='changePage(item.to)' :active='active'>
-      <img :src="item.activeImg" v-if="active === index ? true : false">
+      <img :src="item.activeImg" v-if="active === index">
       <img :src="item.normalImg" v-else>
-      <span :id="item.id">{{item.text}}</span>
+      <span :id="item.id" :class="active === index ? 'activeText' : 'normalText'">{{item.text}}</span>
       <div class="modify">{{item.num}}</div>
     </div>
   </div>
@@ -97,5 +97,11 @@ export default {
     border-radius: 50%;
     color: #fff;
     font-size: 8px;
+  }
+  .activeText{
+    color: #0f0;
+  }
+  .normalText{
+    color: #000;
   }
 </style>
